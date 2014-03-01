@@ -11,5 +11,6 @@ This was cloned from my [Nice MEAN](https://github.com/reergymerej/nice-mean/) r
 Mocha is used for server-side unit tests.
 
 Running the tests through Grunt is easy.
+
     grunt mochaTest
 
