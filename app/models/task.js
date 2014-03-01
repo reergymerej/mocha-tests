@@ -33,7 +33,16 @@ var UserSchema = new Schema({
 
 var TaskSchema = new Schema({
     name: {
-        type: String
+        type: String,
+        required: true
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    },
+    modified: {
+        type: Date,
+        default: Date.now
     }
 });
 

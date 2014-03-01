@@ -28,8 +28,37 @@ describe('unit test', function () {
         });
 
         it('should have a "name"', function (done) {
-            (task.name).should.equal('foo');
+            task.should.have.property('name', 'foo');
             done();
+        });
+
+        it('should require a "name" field', function (done) {
+            task.name = '';
+            task.save(function (err) {
+                should.exist(err);
+                done();
+            })
+        });
+
+        it('should have a "created" timestamp', function (done) {
+            task.created.should.be.below(Date.now());
+            done();
+        });
+
+        it('should have a "modified" timestamp', function (done) {
+            task.should.have.property('modified');
+            done();
+        });
+
+        it('should update "modified" when saved', function (done) {
+            task.foo = 'asdf';
+            task.save(function (err) {
+                console.log('after save', err);
+                console.log('===============');
+                console.log(task);
+
+                done();
+            });
         });
 
         afterEach(function (done) {
