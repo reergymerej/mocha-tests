@@ -46,5 +46,11 @@ var TaskSchema = new Schema({
     }
 });
 
+// Hook to run before each save.
+TaskSchema.pre('save', function (next) {
+    this.modified = Date.now();
+    next();
+});
+
 // Register the model with Mongoose.
 mongoose.model('Task', TaskSchema);

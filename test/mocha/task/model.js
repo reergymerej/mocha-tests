@@ -51,10 +51,9 @@ describe('unit test', function () {
         });
 
         it('should update "modified" when saved', function (done) {
-            task.foo = 'asdf';
+            task.name = 'asdf';
             task.save(function (err) {
-                console.log(task);
-
+                task.modified.should.be.greaterThan(task.created);
                 done();
             });
         });
