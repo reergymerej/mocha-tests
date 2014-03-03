@@ -53,8 +53,6 @@ describe('unit test', function () {
         it('should update "modified" when saved', function (done) {
             task.foo = 'asdf';
             task.save(function (err) {
-                console.log('after save', err);
-                console.log('===============');
                 console.log(task);
 
                 done();
