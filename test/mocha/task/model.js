@@ -27,6 +27,19 @@ describe('unit test', function () {
             done();
         });
 
+        it('should have a default start date', function (done) {
+            task.should.have.property('dateStart');
+            done();
+        });
+
+        it('should have a duration if the task is finished', function (done) {
+            task.dateEnd = Date.now() + 1000;
+            task.save(function (err) {
+                task.should.have.property('duration', task.dateEnd - task.dateStart);
+                done();
+            });
+        });
+
         it('should have a "name"', function (done) {
             task.should.have.property('name', 'foo');
             done();

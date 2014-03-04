@@ -48,6 +48,8 @@ Embarrassing, but I'll keep this here for posterity.  x is a POJO, so of course 
 ### Mongoose
 You can't save a field *not* defined in the Mongoose schema.
 
+Hook in middleware with [pre](http://mongoosejs.com/docs/middleware.html).
+
 ### References
 
 * [Mongoose](http://mongoosejs.com/docs/2.7.x/docs/model-definition.html)

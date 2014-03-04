@@ -43,12 +43,22 @@ var TaskSchema = new Schema({
     modified: {
         type: Date,
         default: Date.now
+    },
+    dateStart: {
+        type: Date,
+        default: Date.now
+    },
+    duration: {
+        type: Number
     }
 });
 
 // Hook to run before each save.
 TaskSchema.pre('save', function (next) {
     this.modified = Date.now();
+    if (this.dateEnd) {
+        this.duration = this.dateEnd - this.dateStart;
+    }
     next();
 });
 
