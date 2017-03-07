@@ -1,6 +1,6 @@
 # Mocha Tests
 
-This is a test project so I can learn about [mocha](http://visionmedia.github.io/mocha/).  I'll keep my notes here in the readme.
+This is a test project so I can learn about [mocha](http://mochajs.org/).  I'll keep my notes here in the readme.
 
 ## Original Project
 
